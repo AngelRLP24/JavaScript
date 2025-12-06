@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uso de SetTimeOut</title>
+</head>
+<body>
+    <input type="number" id="tiempoEspera" placeholder="Coloca el Tiempo de Espera">
+    <button onclick="llamarAlarma()">Click</button>
+    <h1 style="color: red;" id="salida">Apagado</h1>
+
+    <script>
+        let elementoTiempo = document.getElementById('tiempoEspera');
+        let elementoTexto = document.getElementById('salida');
+
+        function tiempoConcluido() {
+            elementoTexto.textContent = "Encendido";
+            elementoTexto.style.color = "green";
+        }
+
+        function llamarAlarma() {
+            setTimeout(tiempoConcluido, 1000 * elementoTiempo.value);   
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uso de textContent</title>
+</head>
+<body>
+    <p>Ingresa tu nombre:</p>
+    <input type="text" id="nombreUsuario" placeholder="Coloca tu nombre">
+    <button onclick="saludarUsuario()">Saludar</button>
+    <h1 id="salida">Hola, Usuario</h1>
+
+    <script>
+        function saludarUsuario() {
+            let elementoNombre = document.getElementById('nombreUsuario');
+            let elementoTexto = document.getElementById('salida');
+            let mensaje = 'Hola, ' + elementoNombre.value;
+            elementoTexto.textContent = mensaje;
+        }
+    </script>
+</body>
+</html>

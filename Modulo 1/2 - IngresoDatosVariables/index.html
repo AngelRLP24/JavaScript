@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ingreso de Datos y variables</title>
+</head>
+<body>
+    <p>Ingresa tu nombre:</p>
+    <input type="text" id="nombreUsuario" placeholder="Coloca tu nombre">
+    <button onclick="SaludarUsuario()">Saludar</button>
+
+    <script>
+        let nombre = document.getElementById('nombreUsuario')
+        function SaludarUsuario() {
+            alert("Hola, " + nombre.value)
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audio</title>
+</head>
+<body>
+    <input type="number" id="tiempoAlarma" placeholder="Coloca el tiempo para la alarmar">
+    <button onclick="inicioAlarma()">Click</button>
+    <h1 style="color: red;" id="salida">Apagado</h1>
+    <audio id="sonidoAlarma">
+        <source src="audio/alarma.mp3" type="audio/mpeg">
+        El Audio no funciona
+    </audio>
+
+    <script>
+        let elementoTiempo = document.getElementById('tiempoAlarma');
+        let elementoTexto = document.getElementById('salida');
+        let elementoSonido = document.getElementById('sonidoAlarma');
+
+        function alarmaEvento(){
+            elementoTexto.textContent = "Encendido";
+            elementoTexto.style.color = "green";
+            elementoSonido.play();
+        }
+
+        function inicioAlarma(){
+            setTimeout(alarmaEvento, 1000 * elementoTiempo.value);
+        }
+    </script>
+</body>
+</html>

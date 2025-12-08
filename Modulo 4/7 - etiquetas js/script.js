@@ -1,0 +1,12 @@
+let alto = 4;
+let ancho = 3;
+
+loopExterno:
+for( y = 1; y <= alto; y++ ){
+    for( x = 1; x <= ancho; x++ ){
+        document.write(y + "." + x + "<br>");
+        if (y == 2 && x == 2) {
+            break loopExterno;
+        }
+    }
+}

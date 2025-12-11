@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shourt icon" href="images.jpg">
+    <title> Tienda de Donas</title>
+</head>
+
+<style>
+    .inputMayorV{
+        background-color: green;
+    }
+
+    .inputMenorV{
+        background-color: red;
+    }
+</style>
+
+<body onload="crearTienda('container', 0, 8)">
+    <h1>Tienda de Donas</h1>
+    <h2>Registro de Ventas</h2>
+    
+    <div id="container">
+
+    </div>
+
+    <h2>Total de Ventas: <span id="textoResultado"> --- </span> </h2>
+ 
+    <button onclick="calcularVenta()">Calcular</button>
+
+    <script src="script.js"></script>
+</body>
+</html>

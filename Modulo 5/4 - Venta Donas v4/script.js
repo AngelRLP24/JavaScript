@@ -1,5 +1,5 @@
 function crearTienda(containerId, minimo, cantidad){
-    let elementoContainer = document.getElementById('container');
+    let elementoContainer = document.getElementById(containerId);
 
     for(tienda = 1; tienda <= cantidad; tienda++){
         let texto = "Tienda " + tienda;
@@ -27,26 +27,40 @@ function crearElementos(textoId, min){
     return elementoP;
 }
 
-function estraerNumeroVenta(ventaNumero){
-    let numeroId = document.getElementById(ventaNumero);
-    let numeroEvaluado = numeroId.value;
+function extraerNumeroVenta(ventaNumero){
+    let numeroEvaluado = ventaNumero.value;
     let numeroParseo = Number(numeroEvaluado);
     return numeroParseo;
 }
 
 function calcularVenta(){
     let arrayVentas = [];
+    let posicionVenta = 0;
+    let elementoContenedor = document.getElementById('container');
 
-    arrayVentas[0] = estraerNumeroVenta('venta1');
-    arrayVentas[1] = estraerNumeroVenta('venta2');
-    arrayVentas[2] = estraerNumeroVenta('venta3');
-    arrayVentas[3] = estraerNumeroVenta('venta4');
-    arrayVentas[4] = estraerNumeroVenta('venta5');
-    arrayVentas[5] = estraerNumeroVenta('venta6');
+    for(let item of elementoContenedor.children){
+        let valorVenta = extraerNumeroVenta(item.children[1]);
+        arrayVentas[posicionVenta] = valorVenta;
+        posicionVenta = posicionVenta + 1;
+    }
 
-    let totalVenta = sumarVerntas(arrayVentas);
+    let totalVenta = sumarVentas(arrayVentas);
     let mayorVenta = sacarMayorVenta(arrayVentas);
     let menorVenta = sacarMenorVenta(arrayVentas);
+
+    for(let input of elementoContenedor.children){
+        let valorVenta = extraerNumeroVenta(input.children[1]);
+
+        input.children[1].className = 'claseNeutro';
+
+        if (mayorVenta == valorVenta) {
+            input.children[1].className = 'inputMayorV';
+        }
+
+        if (menorVenta == valorVenta) {
+            input.children[1].className = 'inputMenorV';
+        }
+    }
 
     let elementoTexto = document.getElementById('textoResultado');
 
@@ -55,7 +69,7 @@ function calcularVenta(){
                                 "/ Menor venta: " + menorVenta;
 }
 
-function sumarVerntas(array){
+function sumarVentas(array){
     let total = 0;
 
     for( let venta of array){

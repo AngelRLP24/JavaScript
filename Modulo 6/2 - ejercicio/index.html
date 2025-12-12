@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Registro de Empleados</title>
+</head>
+<body>
+
+    <h1>Sistema de Empleados</h1>
+
+    <p>
+        <label for="textoNombre">Nombre: </label>
+        <input type="text" name="" id="textoNombre">
+    </p>
+
+    <p>
+        <label for="textoApellido">Apellido: </label>
+        <input type="text" name="" id="textoApellido">
+    </p>
+
+    <p>
+        <label for="textoEdad">Edad: </label>
+        <input type="number" name="" id="textoEdad" min="0">
+    </p>
+
+    <p>
+        <label for="textoCargo">Cargo: </label>
+        <input type="text" name="" id="textoCargo">
+    </p>
+
+    <button onclick="btnGuardarEmpleado()">Guardar Empleado</button>
+    <button onclick="mostarListaEmpleados()">Mostar Lista de Empleados</button>
+
+    <h2 id="textoRestltado"> --- </h2>
+
+    <script src="script.js"></script>
+</body>
+</html>
